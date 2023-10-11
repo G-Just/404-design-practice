@@ -69,17 +69,19 @@ body {
   transition: 200ms;
 }
 
-@keyframes float {
-  from {
-    transform: translate(50px) rotate(5deg);
-  }
-  to {
-    transform: translate(-30px) rotate(-6deg);
-  }
+#left > img {
+  position: absolute;
+  right: 450px;
+  transition: all 2s;
+}
+
+#left > a:hover ~ img {
+  transform: translate(-100px, -50px) rotate(15deg);
+  transition: all 2s;
 }
 
 #right > img {
-  animation: float 2s infinite ease-in-out alternate-reverse;
+  transform: scale(1.2) rotate(4deg);
 }
 
 @keyframes peek {
@@ -112,5 +114,5 @@ body {
 #peeker {
   position: absolute;
   z-index: -1;
-  animation: peek 60s infinite alternate;
+  animation: peek 35s infinite;
 }

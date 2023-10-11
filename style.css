@@ -72,16 +72,7 @@ body {
 #left > img {
   position: absolute;
   right: 450px;
-  transition: all 2s;
-}
-
-#left > a:hover ~ img {
-  transform: translate(-100px, -50px) rotate(15deg);
-  transition: all 2s;
-}
-
-#right > img {
-  transform: scale(1.2) rotate(4deg);
+  transform: scale(1.2) rotate(5deg);
 }
 
 @keyframes peek {

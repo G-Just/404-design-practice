@@ -2,10 +2,11 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: sans-serif;
 }
 
 body {
+  overflow: hidden;
   margin: 0;
   background-color: rgb(4, 126, 166);
   height: 100vh;
@@ -50,12 +51,13 @@ body {
 }
 
 #left > a {
+  position: relative;
   font-size: 30pt;
   padding: 10px 50px;
   background-color: transparent;
   border: 2px solid rgb(75, 114, 255);
   color: rgb(75, 114, 255);
-  border-radius: 20px;
+  border-radius: 50px;
   transition: 200ms;
   text-decoration: none;
   margin-top: 20px;
@@ -69,13 +71,46 @@ body {
 
 @keyframes float {
   from {
-    transform: translate(20px) rotate(-5deg);
+    transform: translate(50px) rotate(5deg);
   }
   to {
-    transform: translate(-20px) rotate(5deg);
+    transform: translate(-30px) rotate(-6deg);
   }
 }
 
 #right > img {
-  animation: float 2s infinite ease-in-out alternate;
+  animation: float 2s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes peek {
+  from {
+    right: 700px;
+  }
+  10% {
+    transform: translate(0px, -300px);
+  }
+  12% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(750px) rotate(20deg);
+  }
+  52% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-750px) rotate(-20deg);
+  }
+  77% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  to {
+    right: 700px;
+  }
+}
+
+#peeker {
+  position: absolute;
+  z-index: -1;
+  animation: peek 60s infinite alternate;
 }
